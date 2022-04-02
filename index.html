@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,20 +14,76 @@
 </head>
 <body>
     <div class="titulo">
-        <div class="titulotexto">
-            <h1>
-                DrivenEats
-            </h1>
-        </div>
-        <div class="corpotexto">
-            <h2>
-                Sua comida em 6 minutos
-            </h2>
-        </div>
+        <h1>
+            DrivenEats
+        </h1>
+        <h2>
+            Sua comida em 6 minutos
+        </h2>
     </div>
 
     <div class="corpo">
+        <h3>Primeiro, seu prato</h3>
+        <div class="itens">
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-principal')">
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-principal')">
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+        </div>
 
+        <h3>Segundo, seu prato</h3>
+        <div class="itens">
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-bebida')" >
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-bebida')">
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-bebida')">
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-bebida')">
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+            
+        </div>
+
+        <h3>Terceiro, seu prato</h3>
+        <div class="itens">
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-sobremesa')">
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+            <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-sobremesa')">
+                <img class="imgitem" src="imgs/prato-principal/temaki_salmao.webp">
+                <h3>titulo item</h3>
+                <p>descriçao do produto</p>
+                <h4>valor do produto</h4>
+            </div>
+        </div>
+        
     </div>
 
     <div class="finalizar">
