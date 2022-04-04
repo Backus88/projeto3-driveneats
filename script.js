@@ -79,7 +79,7 @@ Total: R$ ${informacoes[6].toFixed(2)}
 
 Nome: ${dados[0]}
 Endereço: ${dados[1]}`;
-    window.open("https:/wa.me/5571981086378?text=" + window.encodeURIComponent(mensagem));
+    window.open("https://wa.me/5571981086378?text=" + window.encodeURIComponent(mensagem));
 }
 
 function cancelar(){
