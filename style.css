@@ -12,6 +12,7 @@ body::-webkit-scrollbar {
   }
 
 .titulo{
+    z-index: 1;
     top:0;
     left: 0;
     position: fixed;
@@ -74,6 +75,7 @@ body::-webkit-scrollbar {
 }
 
 .item{
+    position: relative;
     font-family: 'Roboto', 'san-serif';
     display: flex;
     flex-shrink: 0;
@@ -85,6 +87,10 @@ body::-webkit-scrollbar {
     background-color: #ffffff;
     border-radius: 9px;
     margin-right: 16px;
+}
+.item:hover{
+    background-color: rgb(228, 228, 228);
+    transition: 1000ms;
 }
 
 .imgitem{
@@ -116,7 +122,9 @@ body::-webkit-scrollbar {
     align-self: flex-start;
     margin-left: 20px;
 }
-
+.verificado{
+    display: none;
+}
 .finalizar{
     position: fixed;
     left: 0;
@@ -150,14 +158,26 @@ body::-webkit-scrollbar {
     color: #ffffff;
 }
 
-.selecionado-principal{
+.selecionado-principal, .selecionado-bebida, .selecionado-sobremesa {
     box-shadow: inset 0px 0px 0px 5px #32B72F;
 }
-.selecionado-bebida{
-    box-shadow: inset 0px 0px 0px 5px #32B72F;
+.selecionado-principal img:last-child{
+    display: inline;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
 }
-.selecionado-sobremesa{
-    box-shadow: inset 0px 0px 0px 5px #32B72F;
+.selecionado-bebida img:last-child{
+    display: inline;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+.selecionado-sobremesa img:last-child{
+    display: inline;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
 }
 
 .botaoliberado{
@@ -170,12 +190,16 @@ body::-webkit-scrollbar {
     text-align: center;
     color: #ffffff;
 }
+.botaoliberado:hover{
+    background-color: lightgreen;
+    transition: 1000ms;
+}
 .fundo{
     display: none;
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255,0.5);
+    background-color: rgb(255, 255, 255,0.7);
     z-index: 2;
 }
 .fundovisivel{
@@ -189,9 +213,9 @@ body::-webkit-scrollbar {
 
 .telaconfirmacao{
     position: fixed;
-    top: 25%;
+    top: 21%;
     left: 5%;
-    height: 50%;
+    height: 60%;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -202,7 +226,11 @@ body::-webkit-scrollbar {
     border-radius: 9px;
 }
 .telaconfirmacao > h3{
-
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    margin: 10px 0px;
 }
 
 .prato, .bebida, .sobremesa, .total{
@@ -212,11 +240,23 @@ body::-webkit-scrollbar {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+
+}
+.total{
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.018em;
 }
 
 .finalizarenviar, .cancelar{
     width: 80%;
-    height: 18%;
+    height: 13%;
     border: none;
 }
 .finalizarenviar{
@@ -224,11 +264,15 @@ body::-webkit-scrollbar {
     background-color: #ffffff;
     border: none;
 }
+.finalizarenviar:hover{
+    background-color: rgb(252, 149, 149);
+    transition: 1000ms;
+}
 
 .finalizarenviar, .cancelar > p{
     font-size: 22px;
     font-weight: 700;
-    color: #32B72F;
+    color: #50D074;
 }
 
 .cancelar{
@@ -236,6 +280,10 @@ body::-webkit-scrollbar {
 }
 .cancelar > p{
    color: #ffffff;
+}
+.cancelar:hover{
+    border-radius: 100px;
+    border: 0.5px solid #ffffff;
 }
 
 .menuinvisivel{

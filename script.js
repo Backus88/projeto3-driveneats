@@ -52,13 +52,13 @@ function confirmacao(){
         document.querySelector(".corpo").classList.add("corpomargem");
 
         elemento.querySelector(".prato h1").innerHTML = informacoes[0];
-        elemento.querySelector(".prato h2").innerHTML = informacoes[1];
+        elemento.querySelector(".prato h2").innerHTML = informacoes[1].toFixed(2).replace(".", ",");
         elemento.querySelector(".bebida h1").innerHTML = informacoes[2];
-        elemento.querySelector(".bebida h2").innerHTML = informacoes[3];
+        elemento.querySelector(".bebida h2").innerHTML = informacoes[3].toFixed(2).replace(".", ",");
         elemento.querySelector(".sobremesa h1").innerHTML = informacoes[4];
-        elemento.querySelector(".sobremesa h2").innerHTML = informacoes[5];
+        elemento.querySelector(".sobremesa h2").innerHTML = informacoes[5].toFixed(2).replace(".", ",");
         elemento.querySelector(".total h1").innerHTML = "Total"
-        elemento.querySelector(".total h2").innerHTML = informacoes[6];
+        elemento.querySelector(".total h2").innerHTML = "R$" + informacoes[6].toFixed(2).replace(".", ",");
     }
     
 }
@@ -75,7 +75,7 @@ function mensagemWp(){
 - Prato: ${informacoes[0]}
 - Bebida: ${informacoes[2]}
 - Sobremesa: ${informacoes[4]}
-Total: R$ ${informacoes[6]}
+Total: R$ ${informacoes[6].toFixed(2)}
 
 Nome: ${dados[0]}
 Endereço: ${dados[1]}`;
