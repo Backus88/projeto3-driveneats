@@ -26,26 +26,70 @@ function selecionar(elemento,tipoItem) {
     botaoliberado(); 
 }
 
-
-
-function mensagemWp() {
+function getItens() {
     if(botaoliberado()){
         const prato = document.querySelector(".selecionado-principal h3").innerHTML;
         const bebida = document.querySelector(".selecionado-bebida h3").innerHTML;
         const sobremesa = document.querySelector(".selecionado-sobremesa h3").innerHTML;
-        let total = Number(document.querySelector(".selecionado-principal h4").innerHTML.replace('R$','').replace(',','.')) +
-         Number(document.querySelector(".selecionado-bebida h4").innerHTML.replace('R$','').replace(',','.')) + 
-         Number(document.querySelector(".selecionado-sobremesa h4").innerHTML.replace('R$','').replace(',','.'));
-         alert(total);
+        const precoPrato = Number(document.querySelector(".selecionado-principal h4").innerHTML.replace('R$','').replace(',','.'));
+        const precoBebida =  Number(document.querySelector(".selecionado-bebida h4").innerHTML.replace('R$','').replace(',','.'));
+        const precoSobremesa = Number(document.querySelector(".selecionado-sobremesa h4").innerHTML.replace('R$','').replace(',','.'));
+        let total = precoPrato + precoBebida + precoSobremesa;
+        return[prato,precoPrato,bebida,precoBebida,sobremesa,precoSobremesa,total]
+    }
+}
 
-        const mensagem = `Olá, gostaria de fazer o pedido:
-- Prato: ${prato}
-- Bebida: ${bebida}
-- Sobremesa: ${sobremesa}
-Total: R$ ${total.toFixed(2)}`;
-        alert(mensagem);
+function confirmacao(){
 
-        window.open("https:/wa.me/5571981086378?text=" + window.encodeURIComponent(mensagem));
+    if(botaoliberado()){
+        const elemento = document.querySelector(".confirmar");
+        const fundo = document.querySelector(".fundo");
+        elemento.classList.add("telaconfirmacao");
+        fundo.classList.add("fundovisivel");
+        const informacoes = getItens();
+        document.querySelector(".titulo").classList.add("menuinvisivel");
+        document.querySelector(".finalizar").classList.add("menuinvisivel");
+        document.querySelector(".corpo").classList.add("corpomargem");
+
+        elemento.querySelector(".prato h1").innerHTML = informacoes[0];
+        elemento.querySelector(".prato h2").innerHTML = informacoes[1];
+        elemento.querySelector(".bebida h1").innerHTML = informacoes[2];
+        elemento.querySelector(".bebida h2").innerHTML = informacoes[3];
+        elemento.querySelector(".sobremesa h1").innerHTML = informacoes[4];
+        elemento.querySelector(".sobremesa h2").innerHTML = informacoes[5];
+        elemento.querySelector(".total h1").innerHTML = "Total"
+        elemento.querySelector(".total h2").innerHTML = informacoes[6];
     }
     
 }
+function getInfo(){
+    const endereco = prompt("Digite seu endereço");
+    const nome = prompt("Digite seu nome");
+    return [endereco,nome];
+}
+
+function mensagemWp(){
+    const informacoes = getItens();
+    const dados = getInfo();
+    const mensagem = `Olá, gostaria de fazer o pedido:
+- Prato: ${informacoes[0]}
+- Bebida: ${informacoes[2]}
+- Sobremesa: ${informacoes[4]}
+Total: R$ ${informacoes[6]}
+
+Nome: ${dados[0]}
+Endereço: ${dados[1]}`;
+    window.open("https:/wa.me/5571981086378?text=" + window.encodeURIComponent(mensagem));
+}
+
+function cancelar(){
+    document.querySelector(".titulo").classList.remove("menuinvisivel");
+    document.querySelector(".finalizar").classList.remove("menuinvisivel");
+    document.querySelector(".confirmar").classList.remove("telaconfirmacao");
+    document.querySelector(".fundo").classList.remove("fundovisivel");
+    document.querySelector(".corpo").classList.remove("corpomargem");
+
+}
+
+
+    

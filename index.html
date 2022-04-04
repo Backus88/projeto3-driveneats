@@ -13,6 +13,31 @@
     </title>
 </head>
 <body>
+    <div class="fundo">
+        <div class="confirmar">
+            <h3>Confirme seu pedido</h3>
+            <div class="prato">
+                <h1></h1>
+                <h2></h2>
+            </div>
+            <div class="bebida">
+                <h1></h1>
+                <h2></h2>
+            </div>
+            <div class="sobremesa">
+                <h1></h1>
+                <h2></h2>
+            </div>
+            <div class="total">
+                <h1></h1>
+                <h2></h2>
+            </div>
+            <button class="finalizarenviar" type="button" onclick="mensagemWp()"> <p>Tudo certo, pode pedir</p> </button>
+            <button class="cancelar" type="button" onclick="cancelar()"><p>Cancelar</p> </button>
+        </div>
+    </div>
+    
+
     <div class="titulo">
         <h1>
             DrivenEats
@@ -96,7 +121,7 @@
         <div class="itens">
             <div class="item" role="button" tabindex="0" onclick="selecionar(this,'selecionado-sobremesa') ">
                 <img class="imgitem" src="imgs/sobremesa/brownie.jpg">
-                <h3>Brownezie Especial</h3>
+                <h3>Browneie Especial</h3>
                 <p>Te deixa especial</p>
                 <h4>R$ 12,30</h4>
             </div>
@@ -117,7 +142,7 @@
     </div>
 
     <div class="finalizar">
-        <button class="botaofinalizar" type="button" onclick="mensagemWp()">
+        <button class="botaofinalizar" type="button" onclick="confirmacao()">
             <p>Selecione os 3 itens <br></br>
             para fechar o pedido</p>
         </button>

@@ -170,5 +170,78 @@ body::-webkit-scrollbar {
     text-align: center;
     color: #ffffff;
 }
+.fundo{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255,0.5);
+    z-index: 2;
+}
+.fundovisivel{
+    display: inline;
+}
 
+.confirmar{
+    display: none;
 
+}
+
+.telaconfirmacao{
+    position: fixed;
+    top: 25%;
+    left: 5%;
+    height: 50%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    background-color: #50D074;
+    border-radius: 9px;
+}
+.telaconfirmacao > h3{
+
+}
+
+.prato, .bebida, .sobremesa, .total{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.finalizarenviar, .cancelar{
+    width: 80%;
+    height: 18%;
+    border: none;
+}
+.finalizarenviar{
+    border-radius: 100px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.finalizarenviar, .cancelar > p{
+    font-size: 22px;
+    font-weight: 700;
+    color: #32B72F;
+}
+
+.cancelar{
+    background-color: #50D074;
+}
+.cancelar > p{
+   color: #ffffff;
+}
+
+.menuinvisivel{
+    display: none;
+}
+.corpomargem{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
